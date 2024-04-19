@@ -17,13 +17,13 @@ on:
 jobs:
   checkout:
 
-    runs-on: window-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3    
       
   test:
-    runs-on: window-latest
+    runs-on: ubuntu-latest
     needs: checkout
   
     steps:
