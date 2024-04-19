@@ -24,6 +24,7 @@ jobs:
       
   test:
     runs-on: window-latest
+    needs: checkout
   
     steps:
     - name: Set up JDK 17
