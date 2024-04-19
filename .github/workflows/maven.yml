@@ -35,6 +35,7 @@ jobs:
           cache: maven
       - name: Build java project
         run: javac src/main/java/com/example/logic/*.java
+        working-directory: ${{ github.workspace }}
       
   test:
     runs-on: ubuntu-latest
