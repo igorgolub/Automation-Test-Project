@@ -21,10 +21,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3    
+
+  build:
+    runs-on: ubuntu-latest
+    needs: checkout
+
+    steps:
+      - name: Build java project
+        run: javac src/main/java/com/example/logic/*.java
       
   test:
     runs-on: ubuntu-latest
-    needs: checkout
+    needs: build
   
     steps:
     - name: Set up JDK 17
