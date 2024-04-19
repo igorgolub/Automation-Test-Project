@@ -29,8 +29,13 @@ jobs:
         cache: maven
     - name: Print current working directory
       run: pwd
-    - name: List files in directory
-      run: ls -R    
+    - name: List files in root directory
+      run: ls -R
+      working-directory: ${{ github.workspace }}
+
+    - name: List files in src/main/java/com/example/logic directory
+      run: ls -R src/main/java/com/example/logic
+      working-directory: ${{ github.workspace }}
 
   build:
     runs-on: ubuntu-latest
@@ -39,8 +44,13 @@ jobs:
     steps:
     - name: Print current working directory
       run: pwd
-    - name: List files in directory
+    - name: List files in root directory
       run: ls -R
+      working-directory: ${{ github.workspace }}
+
+    - name: List files in src/main/java/com/example/logic directory
+      run: ls -R src/main/java/com/example/logic
+      working-directory: ${{ github.workspace }}
    
     - name: Compile Java source files
       run: javac src/main/java/com/example/logic/*.java
