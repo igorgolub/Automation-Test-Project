@@ -27,12 +27,20 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Print current working directory
+      run: pwd
+    - name: List files in directory
+      run: ls -R    
 
   build:
     runs-on: ubuntu-latest
     needs: checkout
 
     steps:
+    - name: Print current working directory
+      run: pwd
+    - name: List files in directory
+      run: ls -R
    
     - name: Compile Java source files
       run: javac src/main/java/com/example/logic/*.java
