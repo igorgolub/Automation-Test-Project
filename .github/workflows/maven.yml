@@ -27,6 +27,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Print current time
+      run: date    
     - name: Print current working directory
       run: pwd
     - name: List files in root directory
@@ -42,6 +44,8 @@ jobs:
     needs: checkout
 
     steps:
+    - name: Print current time
+      run: date
     - name: Print current working directory
       run: pwd
     - name: List files in root directory
