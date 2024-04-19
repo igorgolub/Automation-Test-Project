@@ -38,11 +38,19 @@ jobs:
       run: javac src/main/java/com/example/logic/*.java
       working-directory: ${{ github.workspace }}
 
-  run-maven:
+  test:
     runs-on: ubuntu-latest
     needs: build
 
     steps:
     - name: Run Maven
       run: mvn -B package --file pom.xml
+      
+  report:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+    - name: Generate report
+      run: mvn site
 
