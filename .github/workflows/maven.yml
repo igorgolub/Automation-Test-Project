@@ -19,15 +19,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Build project
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          cache: maven
-          run: javac src/main/java/com/example/logic/*.java
+        uses: actions/checkout@v2     
+        
+      - name: Build project 
+        run: javac src/main/java/com/example/logic/*.java
+        
       - name: Run test
         run: mvn verify
+        
+      - name: Cache maven dependency
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven
+          
       - name: Generate html report
         run: mvn site
