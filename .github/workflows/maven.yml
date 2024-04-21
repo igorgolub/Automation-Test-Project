@@ -35,6 +35,7 @@ jobs:
           restore-keys: ${{ runner.os }}-maven
           
       - name: Generate html report
+        if: always()
         run: mvn site
       - name: HTML Preview
         id: html_preview
