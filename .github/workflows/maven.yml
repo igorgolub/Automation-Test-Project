@@ -18,7 +18,9 @@ jobs:
   buid-test:
     runs-on: ubuntu-latest
 
-    permissions: read-all
+    permissions:
+      checks: write
+      pull-requests: write
     
     steps:
       - name: Checkout repository
