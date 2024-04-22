@@ -17,6 +17,9 @@ on:
 jobs:
   buid-test:
     runs-on: ubuntu-latest
+
+    permissions: read-all
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2     
@@ -42,5 +45,5 @@ jobs:
         if: always()
         with:
          files: 
-          target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml
+          target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml       
       
