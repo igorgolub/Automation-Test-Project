@@ -40,10 +40,7 @@ public class TestHelloWorld {
 	
 	@Test 
 	public void testSayHelloWithNull() {
-//		assertEquals("Do not support", hl.sayHello(null));
-		
-		assertEquals(true, false);
-		
+		assertEquals("Do not support", hl.sayHello(null));
 	}
 	
 	@Test 
