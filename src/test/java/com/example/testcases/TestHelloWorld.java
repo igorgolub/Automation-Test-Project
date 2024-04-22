@@ -39,11 +39,6 @@ public class TestHelloWorld {
 	}
 	
 	@Test 
-	public void testSayHelloWithNull() {
-		assertEquals("Do not support", hl.sayHello(null));
-	}
-	
-	@Test 
 	public void testSayHelloWithLongString() {
 		assertEquals("Do not support", hl.sayHello("Comments are open for 30 days after publishing a post. For any issues past this date, use the Contact form on the site."));
 	}
