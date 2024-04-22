@@ -23,21 +23,20 @@ jobs:
       pull-requests: write
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2     
+      - name: Checkout
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: 'maven'
+          cache-dependency-path: 'pom.xml'
         
       - name: Build project 
         run: javac src/main/java/com/example/logic/*.java
         
       - name: Run test
         run: mvn verify
-        
-      - name: Cache maven dependency
-        uses: actions/cache@v2
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-maven
           
       - name: Generate html report
         if: always()
