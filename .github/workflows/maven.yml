@@ -37,13 +37,10 @@ jobs:
       - name: Generate html report
         if: always()
         run: mvn site
-      - name: HTML Preview
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
-        id: html_preview
-        uses: pavi2410/html-preview-action@v2
         with:
-            html_file: '**/target/site/surefire-report.html'
-      - name: Print Log URL
-        if: always()
-        run: |
-          echo "Log URL: ${{ steps.html_preview.outputs.url }}"
+         files: 
+          target/site/surefire-report.html
+      
