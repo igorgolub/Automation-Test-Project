@@ -1,12 +1,12 @@
 package com.example.logic;
 
-public class HelloWorld {
+public class HelloWorld {	
 	
 	public String sayHello(String language) {
 		switch (language) {
 		case "English":
 			return "Hello World";
-		case "Viet Name":	
+		case "VietNameses":	
 			return "Xin Chao";
 		default:
 			return "Do not support";			
