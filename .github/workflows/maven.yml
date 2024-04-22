@@ -42,5 +42,5 @@ jobs:
         if: always()
         with:
          files: 
-          target/site/surefire-report.html
+          target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml
       
