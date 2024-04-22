@@ -30,8 +30,7 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
           cache: 'maven'
-          cache-dependency-path: 'pom.xml'
-        
+                
       - name: Build project 
         run: javac src/main/java/com/example/logic/*.java
         
