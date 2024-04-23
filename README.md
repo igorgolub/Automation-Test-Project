@@ -1,8 +1,52 @@
-## Set up CI CD pipeline for Automation-Test-Project with github action
+## Overview
+This repository is used to demonstrate a CI/CD pipeline using GitHub Actions. The pipeline includes the following stages:
+- Checkout the test project from Git repository
+- Build project
+- Run testcases
+- Generate html report
+- Publish report to github
+
+## How to run the workflow
 #### Prerequisites
 - Sign up an GitHub Account
 - Install git on your local machine
-- Maven project with junit
+- Using pulic repository https://github.com/camthinguyen/Automation-Test-Project
+  
+#### Step 1 - Pull code Automation-Test-Project from git repository
+- Create folder 'Automation-Test-Project' on your local machine
+- Open gitbash
+- Navigate to your directory 'Automation-Test-Project'
+- Use git init command creates a new Git repository
+
+  `git init`
+
+- Pull code from git repo 'Automation-Test-Project'
+
+  `git pull git@github.com:camthinguyen/Automation-Test-Project.git`
+
+#### Step 2: Change code and push it to github
+- You can change existing code or add new file. In this case, I will add a new file temp.txt
+- Commit and push code to github
+  `git add .`
+
+  `git commit -m "Add new file"`
+
+  `git remote add origin git@github.com:camthinguyen/Automation-Test-Project.git`
+
+  `git push origin master`
+
+#### Step 3: View the report
+After commit code successful, an workflow will be triggered and run
+![2024-04-23_19h39_39](https://github.com/camthinguyen/Automation-Test-Project/assets/17824398/2eeae2f1-ad72-4a9c-a1f4-08ce6f5d173c)
+
+Click link to view the action https://github.com/camthinguyen/Automation-Test-Project/actions
+
+The test result will be puplish on github page after run successful
+![2024-04-23_19h40_12](https://github.com/camthinguyen/Automation-Test-Project/assets/17824398/108ac758-2ca5-4eee-91af-f38b391e50f1)
+
+
+## Appendix
+### Set up CI CD pipeline for Automation-Test-Project with github action
 
 #### Step 1 - Create a new public repository
 - Sign in to github https://github.com/
@@ -10,25 +54,27 @@
 - Input name for repository Automation-Test-Project
 - Choose option 'public' 
 - Click button 'Create repository' at the end of the page to create new repository
+  
 #### Step 2 - Link the Automation-Test-Project project to repository
 - Open gitbash, navigate to project folder Automation-Test-Project
 
 - Initialize the local directory as a Git repository.
-`git init`
+  `git init`
 
-- Add the files in your new local repository. This stages them for the first commit.
-`git add .`
-or:
-`git add --all`
+- Add the files in your new local repository. This stages them for the first commit
+  
+  `git add .`
+  or:
+  `git add --all`
 
 - Commit the files that you've staged in your local repository.
-`git commit -m 'First commit'`
+  `git commit -m 'First commit'`
 
 - Remote the local repository to the remote one
-`git remote add origin <remote repository URL>`
+  `git remote add origin <remote repository URL>`
 
 - Push the changes in your local repository to GitHub.
-`git push origin master`
+  `git push origin master`
 
 #### Step 3 - Create pipeline action 
 - Select to open Automation-Test-Project repository
@@ -138,27 +184,6 @@ Step for executing the testcases using maven command
 `uses: EnricoMi/publish-unit-test-result-action@v2` This GitHub Action analyses test result files and publishes the results on GitHub
 `files: target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml` The path of report file. It supports JSON, TRX and XML file formats, and runs on Linux, macOS and Windows
 
-## How to run the workflow
-Pulic repository
-https://github.com/camthinguyen/Automation-Test-Project
-#### Step 1 - Pull code Automation-Test-Project from git repository
-- Create folder 'Automation-Test-Project' on your local machine
-- Open gitbash
-- Navigate to your directory 'Automation-Test-Project'
-- Use git init command creates a new Git repository. 
-`git init`
-- Pull code from git repo `Automation-Test-Project`
-`git pull git@github.com:camthinguyen/Automation-Test-Project.git`
-#### Steps 2: Change code and push it to github
-- You can change existing code or add new file (Ex. Change file Automation-Test-Project\src\main\java\com\example\logic\HelloWorld.java)
-- Commit and push code to github
-`git add .`
-`git commit -m "Add more function"`
-`git remote add origin git@github.com:camthinguyen/Automation-Test-Project.git`
-`git push origin master`
-#### Step 3: View the report
-After commit code successful, an workflow will be trigger to be run and the test result will be puplish on github page
-https://github.com/camthinguyen/Automation-Test-Project/actions
-https://github.com/camthinguyen/Automation-Test-Project/actions/runs/8797295968/job/24141890540
-
 Reference: https://docs.github.com/en/actions
+
+
