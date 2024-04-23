@@ -35,10 +35,8 @@ jobs:
       - name: Generate html report
         if: success() || failure()
         run: mvn site
-        
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2        
+      - uses: actions/upload-artifact@v4
         with:
-         files: 
-          target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml       
+          name: my-artifact
+          path: target/site
       
