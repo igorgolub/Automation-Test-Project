@@ -12,4 +12,9 @@ public class HelloWorld {
 			return "Do not support";			
 		}
 	}
+	
+	public String sayHiWith(String name) {		
+		return "Hi " + name;				
+		}
+	}
 }
