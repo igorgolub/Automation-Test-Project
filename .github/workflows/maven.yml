@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Automation-Test-Project CICD
 
 on:
   push:
@@ -33,11 +33,11 @@ jobs:
         run: mvn verify
           
       - name: Generate html report
-        if: always()
+        if: success() || failure()
         run: mvn site
+        
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
+        uses: EnricoMi/publish-unit-test-result-action@v2        
         with:
          files: 
           target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml       
