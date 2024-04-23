@@ -15,6 +15,5 @@ public class HelloWorld {
 	
 	public String sayHiWith(String name) {		
 		return "Hi " + name;				
-		}
-	}
+	}	
 }
