@@ -184,14 +184,13 @@ Step for executing the testcases using maven command
  
  ```sh
  - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2        
-        with:
-          files: 
-          target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml 
+   uses: EnricoMi/publish-unit-test-result-action@v2        
+   with:
+    files: 
+     target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml 
   ```
 `uses: EnricoMi/publish-unit-test-result-action@v2` This GitHub Action analyses test result files and publishes the results on GitHub
-`files: target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml` The path of report file. It supports JSON, TRX and XML file formats, and runs on Linux, macOS and Windows
 
-Reference: https://docs.github.com/en/actions
+`files: target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml` The path of report file. It supports JSON, TRX and XML file formats, and runs on Linux, macOS and Windows
 
 
