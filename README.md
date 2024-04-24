@@ -3,7 +3,7 @@ This repository is used to demonstrate a CI/CD pipeline using GitHub Actions. Th
 - Checkout the test project from Git repository
 - Build project
 - Run testcases
-- Generate html report
+- Generate report
 - Publish report to github
 
 ## How to run the workflow
@@ -118,7 +118,7 @@ jobs:
       - name: Run test
         run: mvn verify
           
-      - name: Generate html report
+      - name: Generate report
         if: success() || failure()
         run: mvn site
         
@@ -167,7 +167,7 @@ Step Build project, using 'run' command to build the java project
 Step for executing the testcases using maven command
 
 ```sh
- - name: Generate html report
+ - name: Generate report
    if: success() || failure()
    run: mvn site
 ```
