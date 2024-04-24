@@ -19,28 +19,37 @@ public class TestHelloWorld {
 	}
 	
 	@Test
-	public void testSayHelloInEnglish() {			
+	public void test01SayHelloInEnglish() {			
 		assertEquals("Hello World", hl.sayHello("English"));
 	}
 	
 	@Test 
-	public void testSayHelloInVietNamemese() {
+	public void test02SayHelloInVietNamemese() {
 		assertEquals("Xin Chao", hl.sayHello("VietNameses"));
 	}
 	
 	@Test 
-	public void testSayHelloInOthers() {
+	public void test03SayHelloInOthers() {
 		assertEquals("Do not support", hl.sayHello("Chinese"));
 	}
 	
 	@Test 
-	public void testSayHelloWithEmpty() {
+	public void test04SayHelloWithEmpty() {
 		assertEquals("Do not support", hl.sayHello(""));
 	}
 	
 	@Test 
-	public void testSayHelloWithLongString() {
-		assertEquals("Do not support", hl.sayHello("Comments are open for 30 days after publishing a post. For any issues past this date, use the Contact form on the site."));
+	public void test05SayHelloWithNull() {
+		assertEquals("Do not support", hl.sayHello(null));
 	}
 	
+	@Test 
+	public void test06SayHelloWithCaseSensitive() {
+		assertEquals("Do not support", hl.sayHello("english"));
+	}
+	
+	@Test 
+	public void test07SayHelloWithLongString() {
+		assertEquals("Do not support", hl.sayHello("Comments are open for 30 days after publishing a post. For any issues past this date, use the Contact form on the site."));
+	}	
 }
