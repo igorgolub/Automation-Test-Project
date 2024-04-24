@@ -32,11 +32,12 @@ jobs:
       - name: Run test
         run: mvn verify
           
-      - name: Generate html report
+      - name: Generate report
         if: success() || failure()
         run: mvn site
-      - uses: actions/upload-artifact@v4
+        
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2        
         with:
-          name: report
-          path: target/site
-      
+         files: 
+          target/surefire-reports/TEST-com.example.testcases.TestHelloWorld.xml       
