@@ -2,7 +2,7 @@
 This repository is used to demonstrate a CI/CD pipeline using GitHub Actions. The pipeline includes the following stages:
 - Checkout the test project from Git repository
 - Build project
-- Run testcases
+- Run tests
 - Generate report
 - Publish report to github
 
